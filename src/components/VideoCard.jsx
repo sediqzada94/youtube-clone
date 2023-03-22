@@ -6,19 +6,20 @@ const VideoCard = ({video}) => {
   console.log(video);
   const postion = {
     top:'-top-1',
-    right:'right-3'
+    right:'right-12 sm:right-3'
   }
   return (
     <div className='bg-gray-50 dark:bg-gray-800 hover:-translate-y-[2px] transition-all
      flex flex-col items-start space-y-2 shadow-md hover:shadow-lg p-4 rounded-md
       w-96 h-72 sm:w-64'>
-      <div className='group'>
+      <div className='group w-full'>
         <div className='relative w-full flex flex-col justify-start items-start space-y-4'>
-        <a href={`video/${video?.id?.videoId}`} className=''>
-          <img src={video?.snippet?.thumbnails?.medium?.url} className=' h-40 rounded-lg hover:opacity-60
-            object-fit transition-all duration-200' /></a> 
+        <a href={`video/${video?.id?.videoId}`} className='mx-auto'>
+          <img src={video?.snippet?.thumbnails?.medium?.url} className='  h-40 rounded-lg hover:opacity-70
+            object-fit transition-opacity duration-200' />
+          </a> 
           <CloseButton top={postion.top} right={postion.right}/>
-        <div className=' flex justify-center text-center'>
+        <div className=' flex justify-center w-full'>
              <a href={`video/${video?.id?.videoId}`} className='flex items-center transition-all text-sm text-left text-gray-600
               dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300'>
                 { video?.snippet?.title?.slice(0,40) }{ video?.snippet?.title.length > 40 && ' ...' }

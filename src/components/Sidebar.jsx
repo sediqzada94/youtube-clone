@@ -4,9 +4,9 @@ import { videoCategoryLinks } from '../utils/constants'
 import { CloseButton } from '.'
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FaYoutube } from 'react-icons/fa'
-const Sidebar = () => {
+const Sidebar = ({ selectedVideoCategory, setSelectedVideoCategory }) => {
     const [showSidebar, setshowSidebar] = useState(false)
-    const [currentLink, setCurrentLink] = useState('laravel')
+    // const [currentLink, setCurrentLink] = useState('laravel')
     const position = {
         top: 'top-2',
         right: 'right-2'
@@ -17,7 +17,7 @@ const Sidebar = () => {
             !showSidebar ?
                   (
                 <button onClick={()=>{setshowSidebar(true)}}
-                    className='absolute top-5 left-5 hover:bg-gray-100 dark:bg-gray-600
+                    className='absolute top-6 left-5 hover:bg-gray-100 dark:bg-gray-600
                      dark:hover:bg-gray-700 p-3 rounded-full hover:scale-110'>
                     <AiOutlineMenu />
                     </button>
@@ -43,9 +43,10 @@ const Sidebar = () => {
                   <div className='text-lg font-semibold text-gray-700 dark:text-gray-200 my-2'>Explore Videos</div>
                   <div className='flex flex-col space-y-1'>
                     { videoCategoryLinks.map((link)=>(
-                      <button key={link.id} className={`px-5 py-1.5 flex place-items-center text-gray-600 dark:text-gray-200 hover:text-black hover:bg-gray-100
+                      <button onClick={() => {setSelectedVideoCategory(link.name); setshowSidebar(false) } }
+                       key={link.id} className={`px-5 py-1.5 flex place-items-center text-gray-600 dark:text-gray-200 hover:text-black hover:bg-gray-100
                         dark:hover:bg-gray-700 hover:mr-1 hover:translate-x-1 rounded-lg transition-color duration-200
-                        ${currentLink === link.name && 'bg-gray-200 dark:bg-gray-700 text-black'}`}>
+                        ${selectedVideoCategory === link.name && 'bg-gray-200 dark:bg-gray-700 text-black'}`}>
                       {link.icon}<span className='ml-3 capitalize text-md'>{link.name}</span>
                       </button>
                     )   
