@@ -2,7 +2,6 @@ import React from 'react'
 import image from '../assets/images/paghman.jpg'
 import { CloseButton } from './'
 const ChannelCard = ({ channel }) => {
-   console.log("Channel info ",channel);
    const position = {
       top:'top-4',
       right:'right-4'

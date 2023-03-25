@@ -6,7 +6,7 @@ export const REACT_APP_YOUTUBE_RAPID_API_KEY = '4ab3e105f6msh8d148df248157a9p12e
 export const videoCategoryLinks = [
     {
      id: 1,
-     name: 'react',
+     name: 'react js',
      icon: <FaReact />
     },
     {
@@ -59,7 +59,7 @@ export const videoCategoryLinks = [
 export const navbarVideoCategoryLinks=[
     {
         id: 1,
-        name: 'all',
+        name: 'front end',
     },
     {
         id: 2,
@@ -87,7 +87,7 @@ export const navbarVideoCategoryLinks=[
     },
     {
         id: 8,
-        name: 'abdul basit abdulsamad',
+        name: 'abdulbasit abdulsamad',
     },
     {
         id: 9,

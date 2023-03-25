@@ -19,12 +19,12 @@ const Home = ({ selectedVideoCategory, setSelectedVideoCategory }) => {
   }, [selectedVideoCategory])
   return (
     <div className='p-4'>
-         <VideoCategoryLinks  setSelectedVideoCategory={setSelectedVideoCategory}/>
-        <h1 className=' mx-24 my-6 text-xl font-semibold'>
+         <VideoCategoryLinks  selectedVideoCategory={selectedVideoCategory} setSelectedVideoCategory={setSelectedVideoCategory}/>
+        { videos.length !== 1 && <h1 className=' mx-24 my-6 text-xl font-semibold'>
         <span className='px-2 py-1 rounded-md bg-gray-300 capitalize'>{selectedVideoCategory}</span> videos
-        </h1>
+        </h1>}
         {isLoading ? <Loading /> :
-        <Videos videos={videos} />
+        <Videos videos={videos} setVideos = { setVideos } />
         }
     </div>
   )

@@ -7,7 +7,7 @@ import { Home } from './pages';
 function App() {
   const [showMenu, setShowMenu] = useState(true) 
   const [darkMode, setDarkMode] = useState(false);
-  const [selectedVideoCategory, setSelectedVideoCategory] = useState('laravel')
+  const [selectedVideoCategory, setSelectedVideoCategory] = useState('abdulbasit abdulsamad')
    
   return (
        <div className={`${darkMode ? 'dark' : ''}`}>

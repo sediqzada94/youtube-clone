@@ -2,14 +2,13 @@ import React from 'react'
 import image from '../assets/images/paghman.jpg'
 import { HiOutlineX } from 'react-icons/hi'
 import CloseButton from './Core/CloseButton'
-const VideoCard = ({video}) => {
-  console.log(video);
+const VideoCard = ({ video, removeVideo }) => {
   const postion = {
     top:'-top-1',
     right:'right-12 sm:right-3'
   }
   return (
-    <div className='bg-gray-50 dark:bg-gray-800 hover:-translate-y-[2px] transition-all
+    <div className='bg-gray-50 dark:bg-gray-800 hover:-translate-y-[2px] transition-all duration-1000
      flex flex-col items-start space-y-2 shadow-md hover:shadow-lg p-4 rounded-md
       w-96 h-72 sm:w-64'>
       <div className='group w-full'>
@@ -18,7 +17,7 @@ const VideoCard = ({video}) => {
           <img src={video?.snippet?.thumbnails?.medium?.url} className='  h-40 rounded-lg hover:opacity-70
             object-fit transition-opacity duration-200' />
           </a> 
-          <CloseButton top={postion.top} right={postion.right}/>
+          <CloseButton top={postion.top} right={postion.right} onClick={ () => removeVideo(video?.id?.videoId) }/>
         <div className=' flex justify-center w-full'>
              <a href={`video/${video?.id?.videoId}`} className='flex items-center transition-all text-sm text-left text-gray-600
               dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300'>
