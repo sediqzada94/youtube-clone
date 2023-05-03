@@ -2,7 +2,6 @@ import React from 'react';
 import { ChannelCard, VideoCard } from './';
 import PlaylistCard from './PlaylistCard';
 const Videos = ({ videos, setVideos }) => {
-  console.log(videos);
   const removeVideo = (videosId) =>{
     let newVideos = videos.filter((video)=>{
       return video?.id?.videoId !== videosId

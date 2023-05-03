@@ -8,10 +8,10 @@ const VideoCard = ({ video, removeVideo }) => {
     right:'right-12 sm:right-3'
   }
   return (
-    <div className='bg-gray-50 dark:bg-gray-800 hover:-translate-y-[2px] transition-all duration-1000
+    <div className='bg-gray-50 dark:bg-gray-800 hover:-translate-y-[2px] transition-all duration-300
      flex flex-col items-start space-y-2 shadow-md hover:shadow-lg p-4 rounded-md
       w-96 h-72 sm:w-64'>
-      <div className='group w-full'>
+        <div className='group w-full'>
         <div className='relative w-full flex flex-col justify-start items-start space-y-4'>
         <a href={`video/${video?.id?.videoId}`} className='mx-auto'>
           <img src={video?.snippet?.thumbnails?.medium?.url} className='  h-40 rounded-lg hover:opacity-70
