@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import image from '../assets/images/paghman.jpg'
 import { HiOutlineX } from 'react-icons/hi'
 import CloseButton from './Core/CloseButton'
@@ -13,16 +14,16 @@ const VideoCard = ({ video, removeVideo }) => {
       w-96 h-72 sm:w-64'>
         <div className='group w-full'>
         <div className='relative w-full flex flex-col justify-start items-start space-y-4'>
-        <a href={`video/${video?.id?.videoId}`} className='mx-auto'>
+        <Link to={`video-detail/${video?.id?.videoId}`} className='mx-auto'>
           <img src={video?.snippet?.thumbnails?.medium?.url} className='  h-40 rounded-lg hover:opacity-70
             object-fit transition-opacity duration-200' />
-          </a> 
+          </Link> 
           <CloseButton top={postion.top} right={postion.right} onClick={ () => removeVideo(video?.id?.videoId) }/>
         <div className=' flex justify-center w-full'>
-             <a href={`video/${video?.id?.videoId}`} className='flex items-center transition-all text-sm text-left text-gray-600
+             <Link to={`video-detail/${video?.id?.videoId}`} className='flex items-center transition-all text-sm text-left text-gray-600
               dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300'>
                 { video?.snippet?.title?.slice(0,40) }{ video?.snippet?.title.length > 40 && ' ...' }
-              </a>
+              </Link>
         </div>
         </div>
         </div>

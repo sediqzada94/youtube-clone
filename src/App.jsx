@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer, VideoCard, } from "./components";
-import { Home } from './pages';
+import { Home, VideoDetail } from './pages';
 
 function App() {
   const [showMenu, setShowMenu] = useState(true) 
@@ -21,7 +21,7 @@ function App() {
              <Routes>
                 <Route path='/' exact element={<Home selectedVideoCategory={selectedVideoCategory} 
                  setSelectedVideoCategory={setSelectedVideoCategory}/>} />
-                <Route path='/video/:id' element={<VideoCard/>} />
+                <Route path='/video-detail/:videoId' element={<VideoDetail/>} />
              </Routes>
             </BrowserRouter>
             </div>

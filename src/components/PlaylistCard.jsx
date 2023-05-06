@@ -12,10 +12,10 @@ const PlaylistCard = ( { playlist } ) => {
           w-96 h-72 sm:w-64'>
          <div className='group w-full'>
         <div className='relative w-full flex flex-col justify-start items-start space-y-4'>
-        <a href={`video`} className='relative mx-auto'>
-          <img src={playlist?.snippet?.thumbnails?.medium?.url} className='  h-40 rounded-lg hover:opacity-70
+        <a href={`video`} className='group relative mx-auto'>
+            <img src={playlist?.snippet?.thumbnails?.medium?.url} className='h-40 rounded-lg hover:opacity-70
             object-fit transition-opacity duration-200' />
-            <div className='flex justify-center items-center absolute right-0 top-0 h-full w-20 bg-black/80 text-white hover:w-full'>
+            <div className='flex justify-center items-center absolute right-0 top-0 h-full w-1/2 bg-black/80 text-white group-hover:w-full transition-all duration-300 rounded-r group-hover:rounded-lg'>
               Play all
             </div>
           </a> 

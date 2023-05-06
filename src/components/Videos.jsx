@@ -21,7 +21,8 @@ const Videos = ({ videos, setVideos }) => {
           <VideoCard key={index} video={videoChannel} removeVideo={removeVideo}/>  : 
           videoChannel?.id?.playlistId ?
            <PlaylistCard playlist={videoChannel} /> :
-         videoChannel?.id?.channelId && <ChannelCard key={index} channel={videoChannel}/> 
+         videoChannel?.id?.channelId &&
+          <ChannelCard key={index} channel={videoChannel}/> 
     ))
     }
     </div>
