@@ -5,6 +5,11 @@ import { MdSportsCricket } from 'react-icons/md'
 export const REACT_APP_YOUTUBE_RAPID_API_KEY = '4ab3e105f6msh8d148df248157a9p12e916jsna989e38265df'
 export const videoCategoryLinks = [
     {
+     id: 14,
+     name: 'master library',
+     icon: <FaReact />
+    },
+    {
      id: 1,
      name: 'react js',
      icon: <FaReact />

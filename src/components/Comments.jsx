@@ -1,8 +1,14 @@
 import React from 'react'
-
-const Comments = () => {
+import { Comment } from './'
+const Comments = ({ comments }) => {
+  console.log('com :', comments)
   return (
-    <div>Comments</div>
+    <div className='flex flex-col items-left justify-items-center'>
+         {  comments.map((comment) => {
+            return <Comment comment = { comment } />
+          }) 
+      }
+    </div>
   )
 }
 
