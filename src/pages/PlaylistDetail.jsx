@@ -12,16 +12,15 @@ const PlaylistDetail = () => {
     fetchApiData(`playlists?part=snippet&id=${playlistId}`).then(data => {
       setPlaylistInfo(data.items)     
     })
-}, [playlistId])
+  }, [playlistId])
 
-useEffect(() => {
+  useEffect(() => {
     fetchApiData(`playlistItems?playlistId=${playlistId}&part=snippet`).then(data => {
       setPlaylistVideos(data.items) 
 
     })
 
 }, [playlistId])
-    console.log("p l info ", playlistInfo)
     const  formatter = new Intl.NumberFormat('en', {notation: 'compact'})
   return (
     <div className='flex flex-col px-20 py-2 '>
@@ -43,7 +42,6 @@ useEffect(() => {
       </div>
 
        <Videos videos={playlistVideos} />
-         {/* { JSON.stringify(playlistVideos) }  */}
      </div>
   )
 }

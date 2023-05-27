@@ -21,7 +21,6 @@ const VideoDetail = () => {
             setVideoDetails(data.items)     
           })
       }, [videoId])
-    console.log("video detail", videosDetails)
     const formmater = new Intl.NumberFormat('en', { notation:'compact' })
   return (
     <div className='flex flex-col sm:flex-row px-20 py-10'>
