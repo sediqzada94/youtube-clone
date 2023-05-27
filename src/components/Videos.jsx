@@ -17,7 +17,7 @@ const Videos = ({ videos, setVideos }) => {
       }
       {
       videos.map((videoChannel, index)=>(
-         videoChannel?.id?.videoId ?
+         videoChannel?.id?.videoId || videoChannel?.kind === "youtube#playlistItem" ?
           <VideoCard key={index} video={videoChannel} removeVideo={removeVideo}/>  : 
           videoChannel?.id?.playlistId ?
            <PlaylistCard playlist={videoChannel} /> :

@@ -14,7 +14,7 @@ const ChannelDetail = () => {
        useEffect(() => {
                  fetchApiData(`channels?part=snippet&id=${channelId}`).then(data => {
                    setChannelInfo(data.items)     
-                   console.log("channel info :",data)
+               
                  })
        
        }, [channelId])

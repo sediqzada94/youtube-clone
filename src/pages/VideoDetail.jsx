@@ -44,7 +44,7 @@ const VideoDetail = () => {
              <div className='flex space-x-5'>
                   <span>Views: {" "}{ formmater.format(videosDetails[0]?.statistics?.viewCount) }</span>
                   <span>Likes: {" "}{ formmater.format(videosDetails[0]?.statistics?.likeCount) }</span>
-                  <span>Comment: {" "}{ formmater.format(videosDetails[0]?.statistics?.commentCount) }</span>
+                  <span>Comments: {" "}{ formmater.format(videosDetails[0]?.statistics?.commentCount) }</span>
              </div>
           </div>
        </div>

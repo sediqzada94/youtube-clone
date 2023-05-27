@@ -2,12 +2,12 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer, VideoCard, } from "./components";
-import { Home, VideoDetail, ChannelDetail } from './pages';
+import { Home, VideoDetail, ChannelDetail, PlaylistDetail } from './pages';
 
 function App() {
   const [showMenu, setShowMenu] = useState(true) 
   const [darkMode, setDarkMode] = useState(false);
-  const [selectedVideoCategory, setSelectedVideoCategory] = useState('abdulbasit abdulsamad')
+  const [selectedVideoCategory, setSelectedVideoCategory] = useState('tailwind')
    
   return (
       <BrowserRouter>
@@ -23,6 +23,7 @@ function App() {
                  setSelectedVideoCategory={setSelectedVideoCategory}/>} />
                 <Route path='/video-detail/:videoId' element={<VideoDetail/>} />
                 <Route path='/channel-detail/:channelId' element={<ChannelDetail/>} />
+                <Route path='/playlist-detail/:playlistId' element={<PlaylistDetail/>} />
              </Routes>
             </div>
           <Footer />
