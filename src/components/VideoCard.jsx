@@ -14,7 +14,7 @@ const VideoCard = ({ video, removeVideo }) => {
       w-96 h-72 sm:w-64'>
         <div className='group w-full'>
         <div className='relative w-full flex flex-col justify-start items-start space-y-4'>
-        <Link to={`video-detail/${video?.id?.videoId}`} className='mx-auto'>
+        <Link to={`/video-detail/${video?.id?.videoId}`} className='mx-auto'>
           <img src={video?.snippet?.thumbnails?.medium?.url} className='  h-40 rounded-lg hover:opacity-70
             object-fit transition-opacity duration-200' />
           </Link> 

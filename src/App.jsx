@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer, VideoCard, } from "./components";
-import { Home, VideoDetail } from './pages';
+import { Home, VideoDetail, ChannelDetail } from './pages';
 
 function App() {
   const [showMenu, setShowMenu] = useState(true) 
@@ -10,6 +10,7 @@ function App() {
   const [selectedVideoCategory, setSelectedVideoCategory] = useState('abdulbasit abdulsamad')
    
   return (
+      <BrowserRouter>
        <div className={`${darkMode ? 'dark' : ''}`}>
          <div className="flex w-full h-auto dark:bg-gray-700 dark:text-white">
           <Sidebar selectedVideoCategory={selectedVideoCategory} setSelectedVideoCategory={ setSelectedVideoCategory}  /> 
@@ -17,18 +18,18 @@ function App() {
           <Navbar darkMode={darkMode} setShowMenu={()=> setShowMenu(true)}
            onClick = {()=> setDarkMode(!darkMode) } />
           <div className='flex flex1 min-h-screen'>
-            <BrowserRouter>
              <Routes>
                 <Route path='/' exact element={<Home selectedVideoCategory={selectedVideoCategory} 
                  setSelectedVideoCategory={setSelectedVideoCategory}/>} />
                 <Route path='/video-detail/:videoId' element={<VideoDetail/>} />
+                <Route path='/channel-detail/:channelId' element={<ChannelDetail/>} />
              </Routes>
-            </BrowserRouter>
             </div>
           <Footer />
           </div>
          </div>
        </div>
+     </BrowserRouter>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import CloseButton from './Core/CloseButton'
 const PlaylistCard = ( { playlist } ) => {
-       console.log( playlist )
+       console.log("play list :", playlist?.id?.playlistId )
     const postion = {
         top:'-top-1',
         right:'right-12 sm:right-3'

@@ -1,6 +1,7 @@
 import React from 'react'
 import image from '../assets/images/paghman.jpg'
 import { CloseButton } from './'
+import { Link } from 'react-router-dom'
 const ChannelCard = ({ channel }) => {
    const position = {
       top:'top-4',
@@ -12,12 +13,12 @@ const ChannelCard = ({ channel }) => {
       w-96 h-72 sm:w-64'>
       <CloseButton top={position.top} right={position.right} />
        <div className=''>
-          <a href={`channel/${channel?.id?.channelId}`} className='flex justify-center items-center'>
+          <Link to={`channel-detail/${channel?.id?.channelId}`} className='flex justify-center items-center'>
           <img src={channel?.snippet?.thumbnails?.medium.url} className='mt-5 h-24 w-24 rounded-full hover:scale-105 transition-transform object-fit' />
-          </a>
+          </Link>
           <div className='mt-3 font-medium space-y-2'>
-            <a href={`channel/${channel?.id?.channelId}`} className='text-gray-600 dark:text-gray-400
-             dark:hover:text-gray-300 hover:text-gray-800 mx-auto flex justify-center'>{channel?.snippet?.channelTitle}</a>
+            <Link to={`channel-detail/${channel?.id?.channelId}`} className='text-gray-600 dark:text-gray-400
+             dark:hover:text-gray-300 hover:text-gray-800 mx-auto flex justify-center'>{channel?.snippet?.channelTitle}</Link>
             {/* <div className='flex text-xs'>
                <a href='#' className='text-gray-500 dark:text-gray-400 dark:hover:text-gray-300
                 hover:text-gray-600'>Channel link</a>
