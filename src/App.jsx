@@ -8,7 +8,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(true) 
   const [darkMode, setDarkMode] = useState(false);
   const [selectedVideoCategory, setSelectedVideoCategory] = useState('tailwind')
-   
+ 
   return (
       <BrowserRouter>
        <div className={`${darkMode ? 'dark' : ''}`}>
@@ -16,6 +16,7 @@ function App() {
           <Sidebar selectedVideoCategory={selectedVideoCategory} setSelectedVideoCategory={ setSelectedVideoCategory}  /> 
           <div className="flex flex-col justify-between flex-1">
           <Navbar darkMode={darkMode} setShowMenu={()=> setShowMenu(true)}
+          selectedVideoCategory={selectedVideoCategory} setSelectedVideoCategory={ setSelectedVideoCategory}
            onClick = {()=> setDarkMode(!darkMode) } />
           <div className='flex flex1 min-h-screen'>
              <Routes>

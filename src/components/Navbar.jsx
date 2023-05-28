@@ -7,7 +7,7 @@ import SearchBar from './SearchBar'
 import { Link } from 'react-router-dom';
 
 
-const navbar = ({ onClick, darkMode, setShowMenu }) => {
+const navbar = ({ onClick, darkMode, setShowMenu, selectedVideoCategory, setSelectedVideoCategory }) => {
   return (
     <nav className='flex flex-col justify-between bg-white dark:bg-gray-800 shadow-md h-auto  p-4 py-6 w-full'>
         <div className='flex justify-between items-center justify-items-center bg-red-30'>
@@ -16,7 +16,7 @@ const navbar = ({ onClick, darkMode, setShowMenu }) => {
                  <FaYoutube /> 
                 </Link>
             </div>
-             <SearchBar />
+             <SearchBar selectedVideoCategory={selectedVideoCategory} setSelectedVideoCategory={ setSelectedVideoCategory} />
             <button className='flex items-center justify-center mr-3 sm:mr-6 w-12 h-12 rounded-full border
              shadow-inner hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 text-red-500 hove:text-red-600'
              onClick={onClick}>
