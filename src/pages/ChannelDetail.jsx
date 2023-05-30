@@ -36,17 +36,16 @@ const ChannelDetail = () => {
     <>
     {isError && <Error />}
      <div className='flex flex-col px-20 py-2 '>
-      <div className=' w-full flex items-center justify-center space-x-10 px-5 py-12 mb-5 bg-gray-50'>
+      <div className=' w-full flex items-center justify-center space-x-10 px-5 py-12 mb-5 bg-gray-50 dark:bg-gray-800'>
         <img src={channelInfo[0]?.snippet?.thumbnails?.medium?.url}alt={channelInfo[0]?.snippet?.title}
         className="rounded-full h-32"
         />
         <div className='flex flex-col space-y-5 b'>
              <div className='flex justify-between gap-x-4'>
-                <span className=' text-lg font-semibold'>{channelInfo[0]?.snippet?.title}</span>
-                <span className=' text-base'>Published:{" "}{moment(channelInfo[0]?.snippet?.publishedAt,'YYYYMMDD').fromNow()}</span>
+                <span className=' text-lg font-semibold dark:text-gray-300'>{channelInfo[0]?.snippet?.title}</span>
+                <span className=' text-base dark:text-gray-300'>Published:{" "}{moment(channelInfo[0]?.snippet?.publishedAt,'YYYYMMDD').fromNow()}</span>
              </div>
-             <div className='flex space-x-10 text-gray-600'>
-             
+             <div className='flex space-x-10 text-gray-600 dark:text-gray-300'>
                <span>{formatter.format(channelInfo[0]?.statistics?.subscriberCount)}{" "}Subscribers</span>
                <span>{channelInfo[0]?.statistics?.videoCount}{" "}Videos</span>
                <span>{formatter.format(channelInfo[0]?.statistics?.viewCount)}{" "}Total views</span>

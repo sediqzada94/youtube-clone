@@ -5,9 +5,10 @@ import { Navbar, Sidebar, Footer, VideoCard, } from "./components";
 import { Home, VideoDetail, ChannelDetail, PlaylistDetail } from './pages';
 
 function App() {
+  const dm = localStorage.getItem("darkMode");
   const [showMenu, setShowMenu] = useState(true) 
-  const [darkMode, setDarkMode] = useState(false);
-  const [selectedVideoCategory, setSelectedVideoCategory] = useState('tailwind')
+  const [darkMode, setDarkMode] = useState(dm);
+  const [selectedVideoCategory, setSelectedVideoCategory] = useState('react js')
  
   return (
       <BrowserRouter>
@@ -17,7 +18,9 @@ function App() {
           <div className="flex flex-col justify-between flex-1">
           <Navbar darkMode={darkMode} setShowMenu={()=> setShowMenu(true)}
           selectedVideoCategory={selectedVideoCategory} setSelectedVideoCategory={ setSelectedVideoCategory}
-           onClick = {()=> setDarkMode(!darkMode) } />
+           onClick = {()=>{ setDarkMode(!darkMode)
+            localStorage.setItem('darkMode',true)
+            }} />
           <div className='flex flex1 min-h-screen'>
              <Routes>
                 <Route path='/' exact element={<Home selectedVideoCategory={selectedVideoCategory} 

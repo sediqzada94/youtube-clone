@@ -32,7 +32,9 @@ const Sidebar = ({ selectedVideoCategory, setSelectedVideoCategory }) => {
                 bg-white dark:bg-gray-800 dark:text-white shadow-lg sm:w-64 w-[70vw] absolute 
                   ease-in-out duration-300 -translate-x-full  ${showSidebar && 'translate-x-0'} overflow-hidden  shadow-md`}>
                 <div className='group relative w-full flex justify-between border-b pb-2'>
-                <Link to='/' className='p-2 cursor-pointer flex text-red-500 hover:text-red-600 rounded-md px-3 group transition-all'>
+                <Link to='/' className='p-2 cursor-pointer flex text-red-500 hover:text-red-600 rounded-md px-3 group transition-all'
+                onClick={ () => { setShowSidebar(false) }}
+                >
                     <FaYoutube size={30}/>
                     <span className='ml-2 items-center text-xl tracking-wider leading-8 text-gray-700 dark:text-gray-200 group-hover:text-black dark:group-hover:text-gray-300 uppercase'>Youtube</span>
                  </Link>

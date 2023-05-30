@@ -1,11 +1,13 @@
 import React, { useRef } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai';
-
+import { useNavigate } from 'react-router-dom';
 const SearchBar = ({ selectedVideoCategory, setSelectedVideoCategory }) => {
   const searchInputRef = useRef(null)
+  const navigate = useNavigate()
   const handleSearch = (e) => {
     if (e.type === 'click' || e.keyCode === 13){
     setSelectedVideoCategory(searchInputRef.current.value)
+    navigate('/')
     }
   }
   return (

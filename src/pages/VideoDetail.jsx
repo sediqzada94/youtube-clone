@@ -25,9 +25,6 @@ const VideoDetail = () => {
   return (
     <div className='flex flex-col sm:flex-row px-20 py-10'>
       <div>
-        { videoLoading && 
-        <Skeleton />
-         }
         <ReactPlayer url={`https://www.youtube.com/watch?v=${videoId}`} 
         onReady={ () => { setVideoLoading(false) }}
         controls={true}
@@ -38,9 +35,9 @@ const VideoDetail = () => {
           <div className='flex flex-col gap-y-4'>
              <div className='flex gap-8'>
               <Link className='font-semibold' to={`/channel-detail/${videosDetails[0]?.snippet?.channelId}`}> {videosDetails[0]?.snippet?.channelTitle}</Link>
-              <span className='text-sm font-semibold text-gray-600'>{ moment(videosDetails[0]?.snippet?.publishedAt, 'YYYYMMDD').fromNow() }</span>
+              <span className='text-sm font-semibold text-gray-600 dark:text-gray-300'>{ moment(videosDetails[0]?.snippet?.publishedAt, 'YYYYMMDD').fromNow() }</span>
              </div>
-             <div className='flex space-x-5'>
+             <div className='flex space-x-5 dark:text-gray-300'>
                   <span>Views: {" "}{ formmater.format(videosDetails[0]?.statistics?.viewCount) }</span>
                   <span>Likes: {" "}{ formmater.format(videosDetails[0]?.statistics?.likeCount) }</span>
                   <span>Comments: {" "}{ formmater.format(videosDetails[0]?.statistics?.commentCount) }</span>
@@ -51,7 +48,7 @@ const VideoDetail = () => {
       <Comments comments={videoComments} />
        </div>
       </div>
-      <Videos videos={suggestedVideos} />
+      <Videos videos={suggestedVideos} columnMode={true}/>
 
     </div>
   )

@@ -21,7 +21,7 @@ const Home = ({ selectedVideoCategory, setSelectedVideoCategory }) => {
     <div className='p-4'>
          <VideoCategoryLinks  selectedVideoCategory={selectedVideoCategory} setSelectedVideoCategory={setSelectedVideoCategory}/>
         { videos.length !== 1 && <h1 className=' mx-24 my-6 text-xl font-semibold'>
-        <span className='px-2 py-1 rounded-md bg-gray-300 capitalize'>{selectedVideoCategory}</span> videos
+        <span className='px-2 py-1 rounded-md bg-gray-300 capitalize'>{selectedVideoCategory.length > 0 ? selectedVideoCategory : 'All' }</span> videos
         </h1>}
         {isLoading ? <Loading /> :
         <Videos videos={videos} setVideos = { setVideos } />

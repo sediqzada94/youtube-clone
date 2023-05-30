@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChannelCard, VideoCard } from './';
 import PlaylistCard from './PlaylistCard';
-const Videos = ({ videos, setVideos }) => {
+const Videos = ({ videos, setVideos, columnMode }) => {
   const removeVideo = (videosId) =>{
     let newVideos = videos.filter((video)=>{
       return video?.id?.videoId !== videosId
@@ -18,7 +18,9 @@ const Videos = ({ videos, setVideos }) => {
       {
       videos.map((videoChannel, index)=>(
          videoChannel?.id?.videoId || videoChannel?.kind === "youtube#playlistItem" ?
-          <VideoCard key={index} video={videoChannel} removeVideo={removeVideo}/>  : 
+          <VideoCard key={videoChannel?.id?.videoId} video={videoChannel} removeVideo={removeVideo}
+          columnMode={columnMode}
+          />  : 
           videoChannel?.id?.playlistId ?
            <PlaylistCard playlist={videoChannel} /> :
          videoChannel?.id?.channelId &&

@@ -24,18 +24,19 @@ const PlaylistDetail = () => {
     const  formatter = new Intl.NumberFormat('en', {notation: 'compact'})
   return (
     <div className='flex flex-col px-20 py-2 '>
-      <div className=' w-full flex items-center justify-center space-x-10 px-5 py-12 mb-5 bg-gray-50'>
+      <div className=' w-full flex items-center justify-center space-x-10 px-5 py-12 mb-5 bg-gray-50
+       dark:bg-gray-800'>
         <img c src={playlistInfo[0]?.snippet?.thumbnails?.medium?.url}alt={playlistInfo[0]?.snippet?.title}
         className="rounded-lg h-32 w-32"
         />
         <div className='flex flex-col space-y-5 b'>
-             <div className='flex justify-between gap-x-4'>
-                <span className=' text-lg font-semibold'>Playlist name: {" "}{playlistInfo[0]?.snippet?.title}</span>
+             <div className='flex justify-between gap-x-4 dark:text-gray-300'>
+                <span className=' text-lg font-semibold text-gray-700 dark:text-gray-300'>Playlist name: {" "}{playlistInfo[0]?.snippet?.title}</span>
                 <span className=' text-base'>Published:{" "}{moment(playlistInfo[0]?.snippet?.publishedAt,'YYYYMMDD').fromNow()}</span>
              </div>
-             <div className='flex space-x-10 text-gray-600'>
+             <div className='flex space-x-10 text-gray-600 dark:text-gray-400'>
               <span className='text-lg font-semibold'>Channel name</span>
-              <Link className='text-gray-700 hover:text-black' to={`/channel-detail/${playlistInfo[0]?.snippet?.channelId}`}>{ playlistInfo[0]?.snippet?.channelTitle } 
+              <Link className='text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 hover:text-black' to={`/channel-detail/${playlistInfo[0]?.snippet?.channelId}`}>{ playlistInfo[0]?.snippet?.channelTitle } 
               </Link>
              </div>
         </div>
