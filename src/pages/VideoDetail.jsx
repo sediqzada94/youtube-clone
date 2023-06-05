@@ -23,14 +23,18 @@ const VideoDetail = () => {
       }, [videoId])
     const formmater = new Intl.NumberFormat('en', { notation:'compact' })
   return (
-    <div className='flex flex-col sm:flex-row px-20 py-10'>
+    <div className='flex flex-col flex-1 w-[300px] sm:w-auto sm:flex-row gap-20 md:p-4 md:px-20 md:py-10'>
       <div>
+        <div className='aspect-video'>
         <ReactPlayer url={`https://www.youtube.com/watch?v=${videoId}`} 
+        width= '100%'
+        height= '100%'
         onReady={ () => { setVideoLoading(false) }}
         controls={true}
         playing={false}
        />
-       <div className='p-4 my-10'> 
+       </div>
+       <div className='p-4 md:p-4 my-10 mx-auto'> 
           <div className='text-lg font-semibold my-4'>{ videosDetails[0]?.snippet?.title }</div>
           <div className='flex flex-col gap-y-4'>
              <div className='flex gap-8'>
@@ -44,12 +48,13 @@ const VideoDetail = () => {
              </div>
           </div>
        </div>
-       <div className='flex flex-col gap-4'>
-      <Comments comments={videoComments} />
+       <div className='flex flex-col gap-4 mx-5'>
+         <Comments comments={videoComments} />
        </div>
       </div>
+      <div className='w-[400px] mx-auto'>
       <Videos videos={suggestedVideos} columnMode={true}/>
-
+      </div>
     </div>
   )
 }

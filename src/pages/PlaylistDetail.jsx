@@ -23,15 +23,15 @@ const PlaylistDetail = () => {
 }, [playlistId])
     const  formatter = new Intl.NumberFormat('en', {notation: 'compact'})
   return (
-    <div className='flex flex-col px-20 py-2 '>
-      <div className=' w-full flex items-center justify-center space-x-10 px-5 py-12 mb-5 bg-gray-50
-       dark:bg-gray-800'>
+    <div className='flex flex-col  py-2 '>
+      <div className=' w-auto flex items-center justify-center space-x-10 px-5 py-12 mb-5 bg-gray-50
+       dark:bg-gray-800 '>
         <img c src={playlistInfo[0]?.snippet?.thumbnails?.medium?.url}alt={playlistInfo[0]?.snippet?.title}
         className="rounded-lg h-32 w-32"
         />
         <div className='flex flex-col space-y-5 b'>
              <div className='flex justify-between gap-x-4 dark:text-gray-300'>
-                <span className=' text-lg font-semibold text-gray-700 dark:text-gray-300'>Playlist name: {" "}{playlistInfo[0]?.snippet?.title}</span>
+                <span className=' text-md font-semibold dark:text-gray-300'>Playlist name: {" "}{playlistInfo[0]?.snippet?.title}</span>
                 <span className=' text-base'>Published:{" "}{moment(playlistInfo[0]?.snippet?.publishedAt,'YYYYMMDD').fromNow()}</span>
              </div>
              <div className='flex space-x-10 text-gray-600 dark:text-gray-400'>

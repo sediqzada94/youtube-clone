@@ -5,15 +5,13 @@ import image from '../assets/images/paghman.jpg'
 import { HiOutlineX } from 'react-icons/hi'
 import CloseButton from './Core/CloseButton'
 const VideoCard = ({ video, removeVideo, columnMode }) => {
-  console.log("video :", video)
   const postion = {
     top:'-top-1',
-    right:'right-12 sm:right-3'
+    right:'right-3'
   }
   return (
     <div className={`bg-gray-50 dark:bg-gray-800 hover:-translate-y-[2px] transition-all duration-300
-     flex flex-col items-start space-y-2 shadow-md hover:shadow-lg p-4 rounded-md
-      w-96 h-72  sm:w-64`}>
+     flex flex-col items-start space-y-2 shadow-md hover:shadow-lg p-4 rounded-md w-auto mx-2 h-72  sm:w-64`}>
         <div className='group w-full '>
         <div className='relative w-full flex flex-col justify-start items-start space-y-4'>
         <Link to={`/video-detail/${video?.id?.videoId || video?.snippet?.resourceId?.videoId }`} className='mx-auto'>

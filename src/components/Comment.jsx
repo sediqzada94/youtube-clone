@@ -6,8 +6,8 @@ const Comment = ({ comment }) => {
         const likeCount = comment?.snippet?.topLevelComment?.snippet?.likeCount;
         const commentText = comment?.snippet?.topLevelComment?.snippet?.textDisplay
   return (
-    <div className='flex  items-start shadow-sm p-4 my-1 rounded-lg bg-gray-50 dark:bg-gray-800 transition duration-300'>
-            <div className='mr-4 w-20 flex items-center justify-center'>
+    <div className='w-[320px] sm:w-full mx-auto flex items-start justify-center shadow-sm py-2 md:p-4 my-1 rounded-lg bg-gray-50 dark:bg-gray-800 transition duration-300'>
+            <div className='mr-1 md:mr-4 w-20 flex items-center justify-center'>
                 <img className='rounded-full h-10 w-10' src={ comment?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl } />
             </div>
             <div className='flex flex-col flex-1'>

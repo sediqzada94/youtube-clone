@@ -10,7 +10,7 @@ const ChannelCard = ({ channel }) => {
   return (
     <div className='group relative bg-gray-50 dark:bg-gray-800 hover:-translate-y-[2px] transition-all
      flex justify-center items-start space-y-2 shadow-md hover:shadow-lg p-4 rounded-md
-      w-96 h-72 sm:w-64'>
+      w-[320px]  mx-2 h-72  sm:w-64'>
       <CloseButton top={position.top} right={position.right} />
        <div className=''>
           <Link to={`channel-detail/${channel?.id?.channelId}`} className='flex justify-center items-center'>

@@ -29,32 +29,30 @@ const ChannelDetail = () => {
     console.log("sdlk :")
     setIsError(true)
   }
-      
-      console.log('channel :', channelInfo)
       const  formatter = new Intl.NumberFormat('en', {notation: 'compact'})
    return (
     <>
     {isError && <Error />}
-     <div className='flex flex-col px-20 py-2 '>
-      <div className=' w-full flex items-center justify-center space-x-10 px-5 py-12 mb-5 bg-gray-50 dark:bg-gray-800'>
+     <div className='flex flex-col px-1 md:px-20 py-2 '>
+      <div className=' flex flex-col md:flex-row items-center justify-center space-x-10 px-2 md:px-5 py-12 -ml-10 mb-3 bg-gray-50 dark:bg-gray-800'>
         <img src={channelInfo[0]?.snippet?.thumbnails?.medium?.url}alt={channelInfo[0]?.snippet?.title}
-        className="rounded-full h-32"
+        className="rounded-full h-32 mb-5 md:mb-0"
         />
         <div className='flex flex-col space-y-5 b'>
              <div className='flex justify-between gap-x-4'>
                 <span className=' text-lg font-semibold dark:text-gray-300'>{channelInfo[0]?.snippet?.title}</span>
                 <span className=' text-base dark:text-gray-300'>Published:{" "}{moment(channelInfo[0]?.snippet?.publishedAt,'YYYYMMDD').fromNow()}</span>
              </div>
-             <div className='flex space-x-10 text-gray-600 dark:text-gray-300'>
+             <div className='flex space-x-10 text-xs text-gray-600 dark:text-gray-300'>
                <span>{formatter.format(channelInfo[0]?.statistics?.subscriberCount)}{" "}Subscribers</span>
                <span>{channelInfo[0]?.statistics?.videoCount}{" "}Videos</span>
                <span>{formatter.format(channelInfo[0]?.statistics?.viewCount)}{" "}Total views</span>
              </div>
         </div>
       </div>
-
+      <div className='mx-auto'>
        <Videos videos={channelVideos} />
- 
+      </div>
      </div>
   
      </>
