@@ -28,7 +28,7 @@ The YouTube clone React-Tailwind application offers the following functionalitie
 To run the YouTube clone React-Tailwind application locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/sediqzada94/youtube-clone.git`
-2. Navigate to the project directory: `cd your-repo`
+2. Navigate to the project directory: `cd youtube-clone`
 3. Install the dependencies: `npm install`
 4. Set up the YouTube API: Obtain an API key from the YouTube Data API and replace the `YOUR_API_KEY` placeholder in the code with your actual API key.
 5. Start the development server: `npm run dev`
