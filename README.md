@@ -2,7 +2,7 @@
 # YouTube Clone React-Tailwind Application
 
 This is a YouTube clone application built using React, React Router and Tailwind CSS. It allows users to search for videos, view related and suggested videos, explore playlists and channels, access video comments, and more. The application fetches video data from the https://youtube-v31.p.rapidapi.com API to provide an immersive user experience.
-
+[Live Demo](https://youtube-sediqzada.netlify.app/)
 ## Features
 
 The YouTube clone React-Tailwind application offers the following functionalities:
